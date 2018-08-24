@@ -7,23 +7,23 @@ import {MatDatepickerInputEvent} from '@angular/material/datepicker';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Assigment5 by Nenad Bulatovic';
+  title = 'Assigment 5 by Nenad Bulatovic';
 
-  lastUpdated;
+  elapsedTime;
+  currentDate = new Date();
 
   constructor() {
-		this.lastUpdated = new Date();
+		this.elapsedTime = new Date();
 	}
 	
 	resetLastUpdated() {
-    this.lastUpdated = new Date();
+    this.elapsedTime = new Date();
   }
   
   events: string[] = [];
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-    // this.events.push(`${type}: ${event.value}`);
-    this.lastUpdated = new Date(event.value);
+    this.elapsedTime = new Date(event.value);
   }
 
 }

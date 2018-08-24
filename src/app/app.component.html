@@ -1,18 +1,16 @@
 <div>
-<h1>Welcome to {{ title }}</h1>
-<p>
-  Last updated: <time>{{lastUpdated | amTimeAgo}}</time>
-</p>
-<p>
-  <button (click)="resetLastUpdated()">Reset</button>
-</p>
-<hr>
+  <h1>{{ title }}</h1>
 
-<mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Please enter date"
-         (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
-
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Please enter date" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  @ midnight
+  <div>
+    elapsed time since then is: <time>{{elapsedTime | amTimeAgo }}</time>
+  </div>
+  <p>
+    <button (click)="resetLastUpdated()">Reset to now</button>
+  </p>
 </div>
